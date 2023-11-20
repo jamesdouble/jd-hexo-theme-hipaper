@@ -1167,13 +1167,28 @@ ul.widget-tab-nav {
 	}
 
 .site-header-image {
-	max-height:800px; 
+	max-height:500px; 
 	min-height:500px; 
 	overflow: hidden;
 	position: relative;
+	text-align: center;
+	/*margin-top: -200px*/
 }
 
+#originBg {
+	width: auto;
+	height: auto;
+	max-height: 500px;
+	max-width: 100%;
+}
+
+
 .blur {	
+	top: 0%;
+	width: auto;
+	position: absolute;
+	min-height: 500px;
+	min-width: 100%;
     filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
     
     -webkit-filter: blur(11px); /* Chrome, Opera */

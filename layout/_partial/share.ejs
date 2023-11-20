@@ -1,0 +1,61 @@
+
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js"></script>
+<!-- 定义分享按钮 -->
+
+<% 
+	var shareid = post.path; 
+	shareid = shareid.replace(/\//g,"-");
+	shareid = shareid.replace(".html","");
+
+	var fbShareId = 'fb' + shareid;
+	var twiShareId = 'twitter' + shareid;
+	var weiboShareId = 'weibo' + shareid;
+%>
+
+
+<i class="fab fa-facebook-square fa-3x" id="<%- fbShareId %>"></i>
+<i class="fab fa-twitter-square fa-3x" id="<%- twiShareId %>"></i>
+<i class="fab fa-weibo fa-3x" id="<%- weiboShareId %>"></i>
+
+<script>
+function setUpBeforeSend(link, title) {
+	mobShare.config( {
+    debug: false, 
+    appkey: '24b93e6682340', // appkey
+    params: {
+        url: link, // 分享链接
+        title: title, // 分享标题
+    }
+} );
+}
+</script>
+
+<script>
+function fbClick() { 
+ 	setUpBeforeSend('<%- post.permalink  %>', '<%-  post.title %>');
+	var facebook = mobShare( 'facebook' );
+    facebook.send();
+}
+
+function twiClick() { 
+	setUpBeforeSend('<%- post.permalink  %>', '<%-  post.title %>');
+	var twitter = mobShare( 'twitter' );
+    twitter.send();
+}
+
+function weiClick() { 
+	setUpBeforeSend('<%- post.permalink  %>', '<%-  post.title %>');
+	var weibo = mobShare( 'weibo' );
+    weibo.send();
+}
+
+
+
+// jquery库的使用方法
+$( '#<%- fbShareId %>' ).click(fbClick);
+
+$( '#<%- twiShareId %>' ).click(twiClick);
+
+$( '#<%- weiboShareId %>' ).click(weiClick);
+
+</script>

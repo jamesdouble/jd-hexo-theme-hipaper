@@ -1,0 +1,13 @@
+<% 
+	  	var pv = popular_posts_pv(post);
+	  	var fixPV = 0;
+	  	if (pv == 0) {
+	  	 	fixPV = 126;
+	  	} else {
+	  		fixPV = pv;
+	  	}
+	   %>
+
+<span>
+	  本文总阅读量<%- fixPV %> 次
+</span>

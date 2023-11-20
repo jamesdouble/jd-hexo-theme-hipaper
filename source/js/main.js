@@ -1,20 +1,32 @@
 
 // Highlight current nav item
 var hasCurrent = false;
-var isindexpage = true;
-$('#main-nav > li').each(function () {
-	if(isindexpage){
-		isindexpage = false;
-		return true;
-	  }
-	var url = window.location.href;
-	if(url.toUpperCase().indexOf($(this).attr("linktext").trim().toUpperCase()) != -1){
-		$(this).addClass('current-menu-item current_page_item');
-		hasCurrent = true;
-	} else {
-		$(this).removeClass('current-menu-item current_page_item');
+$('#main-nav > li').each(
+	function () 
+	{
+		var upUrl = window.location.href.toUpperCase();
+		var htmlTxt =  $(this).text().trim().toUpperCase();
+		//高亮跟頁面同名的
+		if(upUrl.indexOf(htmlTxt) != -1){
+			$(this).addClass('current-menu-item current_page_item');
+			hasCurrent = true;
+		}
+		else if ((upUrl.indexOf("ARCHIVES") != -1) && htmlTxt == "ARTICLE") {
+			$(this).addClass('current-menu-item current_page_item');
+			hasCurrent = true;
+		}
+		else if ((upUrl.indexOf("CATEGORIES") != -1) && htmlTxt == "CATEGORY")  {
+			$(this).addClass('current-menu-item current_page_item');
+			hasCurrent = true;
+		} else if ((upUrl.indexOf("TRAVELOGUE") != -1) && htmlTxt == "travelogue") {
+			$(this).addClass('current-menu-item current_page_item');
+			hasCurrent = true;
+		}
+		else {
+			$(this).removeClass('current-menu-item current_page_item');
+		}
 	}
-});
+);
 
 if (!hasCurrent) {
 	$('#main-nav > li:first').addClass('current-menu-item current_page_item');
