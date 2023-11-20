@@ -5,10 +5,12 @@
 # Header Menu
 menu:
   Home: /
-  Archives: archives
-  Categories: categories
+  Article: archives
+  TRAVELOGUE: travelogue
+  Category: categories
   Tags: tags
   About: about
+  Map: map
 rss: /atom.xml
 
 
@@ -22,16 +24,26 @@ favicon: css/images/favicon.ico
 # Put your avatar.jpg into `hexo-site/themes/hipaper/source/` directory.
 # url is target link (E.g. `url: https://hexo.io/logo.svg` or `url: css/images/mylogo.jpg`)
 avatar: 
-  enable: false
-  width: 124
-  height: 124
+  enable: true
+  width: 118.1
+  height: 66.1
   bottom: 10
-  url: https://hexo.io/logo.svg
+  url: css/images/kittyNTravelLogo.png
 
-
-# AboutPage background, support multiple images.
-about_big_image: [css/images/pose01.jpg, https://source.unsplash.com/collection/954550/1920x1080, https://source.unsplash.com/collection/954550/1920x1081]
-
+# # AboutPage background, support multiple images.
+# about_big_image: [css/images/Homephotos/5.jpg
+#                   css/images/Homephotos/p.jpg,
+#                   css/images/Homephotos/Amsterdam.jpg,
+#                   css/images/Homephotos/cathedral.jpg,
+#                   css/images/Homephotos/RedScquare.jpg,
+#                   css/images/Homephotos/italy.jpg,
+#                   css/images/Homephotos/Rome4.jpg,
+#                   css/images/Homephotos/Rome-1.jpg,
+#                   css/images/Homephotos/Verona.jpg,
+#                   css/images/Homephotos/Vience2.jpg,
+#                   css/images/Homephotos/Vience3.jpeg,
+#                   css/images/Homephotos/Vience5.jpg,
+#                   css/images/Homephotos/vience4.jpg]
 
 # Homepage thumbnail
 random_thumb: false
@@ -48,6 +60,7 @@ widgets:
 - social
 - recent_posts
 - category
+- facebookpage
 - tag
 - tagcloud
 - archive
@@ -55,13 +68,13 @@ widgets:
 # Social Links
 # Key is the name of FontAwsome icon.
 # Value is the target link (E.g. GitHub: https://github.com/iTimeTraveler)
-social:
-  Github: https://github.com/iTimeTraveler
-  Weibo: 
-  Twitter: 
-  Facebook: 
-  Google-plus: 
-  Instagram: 
+# social:
+#   Github: 
+#   Weibo: 
+#   Twitter: 
+#   Facebook: 
+#   Google-plus: 
+#   Instagram: 
 
 
 # Search
